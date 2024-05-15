@@ -1,0 +1,1050 @@
+{
+    "success": true,
+    "content": [
+        {
+            "id": "1",
+            "name": "Basic Solid",
+            "icon": "https://and.appchief.dev/storage/templates/January2024/h1a9ocqWuBU8loaMjJG7/cover.png",
+            "type": "solid",
+            "content": [
+                {
+                    "id": "1",
+                    "color": "#EA3333",
+                    "is_premium": false,
+                    "is_new": true
+                },
+                {
+                    "id": "2",
+                    "color": "#FAFF00",
+                    "is_premium": false,
+                    "is_new": true
+                },
+                {
+                    "id": "3",
+                    "color": "#E2E6EB",
+                    "is_premium": false,
+                    "is_new": true
+                },
+                {
+                    "id": "4",
+                    "color": "#EA3333",
+                    "is_premium": false,
+                    "is_new": true
+                },
+                {
+                    "id": "5",
+                    "color": "#0EA827",
+                    "is_premium": false,
+                    "is_new": true
+                },
+                {
+                    "id": "6",
+                    "color": "#167987",
+                    "is_premium": true,
+                    "is_new": true
+                },
+                {
+                    "id": "7",
+                    "color": "#30CDE2",
+                    "is_premium": true,
+                    "is_new": true
+                },
+                {
+                    "id": "8",
+                    "color": "#7F4040",
+                    "is_premium": true,
+                    "is_new": true
+                },
+                {
+                    "id": "9",
+                    "color": "#FAFF00",
+                    "is_premium": true,
+                    "is_new": true
+                },
+                {
+                    "id": "10",
+                    "color": "#E2E6EB",
+                    "is_premium": true,
+                    "is_new": true
+                },
+                {
+                    "id": "11",
+                    "color": "#EA3333",
+                    "is_premium": true,
+                    "is_new": false
+                },
+                {
+                    "id": "12",
+                    "color": "#0EA827",
+                    "is_premium": true,
+                    "is_new": false
+                },
+                {
+                    "id": "13",
+                    "color": "#167987",
+                    "is_premium": true,
+                    "is_new": false
+                },
+                {
+                    "id": "14",
+                    "color": "#30CDE2",
+                    "is_premium": true,
+                    "is_new": false
+                },
+                {
+                    "id": "15",
+                    "color": "#7F4040",
+                    "is_premium": true,
+                    "is_new": false
+                },
+                {
+                    "id": "16",
+                    "color": "#0EA827",
+                    "is_premium": true,
+                    "is_new": false
+                },
+                {
+                    "id": "17",
+                    "color": "#167987",
+                    "is_premium": true,
+                    "is_new": false
+                },
+                {
+                    "id": "18",
+                    "color": "#30CDE2",
+                    "is_premium": true,
+                    "is_new": false
+                },
+                {
+                    "id": "19",
+                    "color": "#7F4040",
+                    "is_premium": true,
+                    "is_new": false
+                },
+                {
+                    "id": "20",
+                    "color": "#FAFF00",
+                    "is_premium": true,
+                    "is_new": false
+                },
+                {
+                    "id": "21",
+                    "color": "#E2E6EB",
+                    "is_premium": true,
+                    "is_new": false
+                },
+                {
+                    "id": "22",
+                    "color": "#EA3333",
+                    "is_premium": true,
+                    "is_new": false
+                },
+                {
+                    "id": "23",
+                    "color": "#0EA827"
+                },
+                {
+                    "id": "24",
+                    "color": "#167987"
+                },
+                {
+                    "id": "25",
+                    "color": "#30CDE2"
+                },
+                {
+                    "id": "26",
+                    "color": "#7F4040"
+                }
+            ]
+        },
+        {
+            "id": "1",
+            "name": "Neon Solids",
+            "icon": "https://and.appchief.dev/storage/templates/January2024/h1a9ocqWuBU8loaMjJG7/cover.png",
+            "type": "solid",
+            "content": [
+                {
+                    "id": "1",
+                    "color": "#EA3333",
+                    "is_premium": false,
+                    "is_new": true
+                },
+                {
+                    "id": "2",
+                    "color": "#FAFF00",
+                    "is_premium": false,
+                    "is_new": true
+                },
+                {
+                    "id": "3",
+                    "color": "#E2E6EB",
+                    "is_premium": false,
+                    "is_new": true
+                },
+                {
+                    "id": "4",
+                    "color": "#EA3333",
+                    "is_premium": false,
+                    "is_new": true
+                },
+                {
+                    "id": "5",
+                    "color": "#0EA827",
+                    "is_premium": false,
+                    "is_new": true
+                },
+                {
+                    "id": "6",
+                    "color": "#167987",
+                    "is_premium": true,
+                    "is_new": true
+                },
+                {
+                    "id": "7",
+                    "color": "#30CDE2",
+                    "is_premium": true,
+                    "is_new": true
+                },
+                {
+                    "id": "8",
+                    "color": "#7F4040",
+                    "is_premium": true,
+                    "is_new": true
+                },
+                {
+                    "id": "9",
+                    "color": "#FAFF00",
+                    "is_premium": true,
+                    "is_new": true
+                },
+                {
+                    "id": "10",
+                    "color": "#E2E6EB",
+                    "is_premium": true,
+                    "is_new": true
+                },
+                {
+                    "id": "11",
+                    "color": "#EA3333",
+                    "is_premium": true,
+                    "is_new": false
+                },
+                {
+                    "id": "12",
+                    "color": "#0EA827",
+                    "is_premium": true,
+                    "is_new": false
+                },
+                {
+                    "id": "21",
+                    "color": "#E2E6EB",
+                    "is_premium": true,
+                    "is_new": false
+                },
+                {
+                    "id": "22",
+                    "color": "#EA3333",
+                    "is_premium": true,
+                    "is_new": false
+                },
+                {
+                    "id": "23",
+                    "color": "#0EA827"
+                },
+                {
+                    "id": "24",
+                    "color": "#167987"
+                },
+                {
+                    "id": "25",
+                    "color": "#30CDE2"
+                },
+                {
+                    "id": "26",
+                    "color": "#7F4040"
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "name": "Dummy Gradients",
+            "is_new": true,
+            "icon": "https://and.appchief.dev/storage/templates/January2024/h1a9ocqWuBU8loaMjJG7/cover.png",
+            "type": "gradient",
+            "content": [
+                {
+                    "id": "1",
+                    "colors": [
+                        "#FFC5FF",
+                        "#DE4646"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0,
+                    "is_premium": true,
+                    "is_new": true
+                },
+                {
+                    "id": "2",
+                    "colors": [
+                        "#B7F9A1",
+                        "#028BB6"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0,
+                    "is_premium": true,
+                    "is_new": true
+                    
+                },
+                {
+                    "id": "3",
+                    "colors": [
+                        "#FFD3F0", 
+                        "#DED846"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0,
+                    "is_premium": true,
+                    "is_new": true
+                },
+                {
+                    "id": "4",
+                    "colors": [
+                        "#96ADFF",
+                        "#2F5570"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0,
+                    "is_premium": true,
+                    "is_new": true
+                },
+                {
+                    "id": "5",
+                    "colors": [
+                        "#B6F0FD",
+                        "#11664D"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0,
+                    "is_premium": true,
+                    "is_new": false
+                },
+                {
+                    "id": "6",
+                    "colors": [
+                        "#FFC5FF",
+                        "#DE4646"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0,
+                    "is_premium": true,
+                    "is_new": false
+                },
+                {
+                    "id": "7",
+                    "colors": [
+                        "#B7F9A1",
+                        "#028BB6"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0,
+                    "is_premium": true,
+                    "is_new": false
+                },
+                {
+                    "id": "8",
+                    "colors": [
+                        "#FFD3F0", 
+                        "#DED846"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0,
+                    "is_premium": true,
+                    "is_new": false
+                },
+                {
+                    "id": "9",
+                    "colors": [
+                        "#96ADFF",
+                        "#2F5570"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0,
+                    "is_premium": false,
+                    "is_new": true
+                },
+                {
+                    "id": "10",
+                    "colors": [
+                        "#B6F0FD",
+                        "#11664D"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0,
+                    "is_premium": false,
+                    "is_new": true
+                },
+                {
+                    "id": "11",
+                    "colors": [
+                        "#FFC5FF",
+                        "#DE4646"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0,
+                    "is_premium": false,
+                    "is_new": true
+                },
+                {
+                    "id": "12",
+                    "colors": [
+                        "#B7F9A1",
+                        "#028BB6"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0,
+                    "is_premium": false,
+                    "is_new": true
+                },
+                {
+                    "id": "13",
+                    "colors": [
+                        "#FFD3F0", 
+                        "#DED846"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0,
+                    "is_premium": false,
+                    "is_new": true
+                },
+                {
+                    "id": "14",
+                    "colors": [
+                        "#96ADFF",
+                        "#2F5570"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0
+                },
+                {
+                    "id": "15",
+                    "colors": [
+                        "#B6F0FD",
+                        "#11664D"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0
+                },
+                {
+                    "id": "16",
+                    "colors": [
+                        "#FFC5FF",
+                        "#DE4646"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0
+                },
+                {
+                    "id": "17",
+                    "colors": [
+                        "#B7F9A1",
+                        "#028BB6"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0
+                },
+                {
+                    "id": "18",
+                    "colors": [
+                        "#FFD3F0", 
+                        "#DED846"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0
+                },
+                {
+                    "id": "19",
+                    "colors": [
+                        "#96ADFF",
+                        "#2F5570"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0
+                },
+                {
+                    "id": "20",
+                    "colors": [
+                        "#B6F0FD",
+                        "#11664D"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0
+                },
+                {
+                    "id": "21",
+                    "colors": [
+                        "#FFC5FF",
+                        "#DE4646"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0
+                },
+                {
+                    "id": "22",
+                    "colors": [
+                        "#B7F9A1",
+                        "#028BB6"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0
+                },
+                {
+                    "id": "23",
+                    "colors": [
+                        "#FFD3F0", 
+                        "#DED846"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0
+                },
+                {
+                    "id": "24",
+                    "colors": [
+                        "#96ADFF",
+                        "#2F5570"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0
+                },
+                {
+                    "id": "25",
+                    "colors": [
+                        "#B6F0FD",
+                        "#11664D"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0
+                },
+                {
+                    "id": "26",
+                    "colors": [
+                        "#FFC5FF",
+                        "#DE4646"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0
+                },
+                {
+                    "id": "27",
+                    "colors": [
+                        "#B7F9A1",
+                        "#028BB6"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0
+                },
+                {
+                    "id": "28",
+                    "colors": [
+                        "#FFD3F0", 
+                        "#DED846"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0
+                },
+                {
+                    "id": "29",
+                    "colors": [
+                        "#96ADFF",
+                        "#2F5570"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0
+                },
+                {
+                    "id": "30",
+                    "colors": [
+                        "#B6F0FD",
+                        "#11664D"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0
+                },
+                {
+                    "id": "31",
+                    "colors": [
+                        "#FFC5FF",
+                        "#DE4646"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0
+                },
+                {
+                    "id": "32",
+                    "colors": [
+                        "#B7F9A1",
+                        "#028BB6"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0
+                },
+                {
+                    "id": "33",
+                    "colors": [
+                        "#FFD3F0", 
+                        "#DED846"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0
+                },
+                {
+                    "id": "34",
+                    "colors": [
+                        "#96ADFF",
+                        "#2F5570"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0
+                },
+                {
+                    "id": "35",
+                    "colors": [
+                        "#B6F0FD",
+                        "#11664D"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0
+                },
+                {
+                    "id": "36",
+                    "colors": [
+                        "#FFC5FF",
+                        "#DE4646"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0
+                },
+                {
+                    "id": "37",
+                    "colors": [
+                        "#B7F9A1",
+                        "#028BB6"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0
+                },
+                {
+                    "id": "38",
+                    "colors": [
+                        "#FFD3F0", 
+                        "#DED846"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0
+                },
+                {
+                    "id": "39",
+                    "colors": [
+                        "#96ADFF",
+                        "#2F5570"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0
+                },
+                {
+                    "id": "40",
+                    "colors": [
+                        "#B6F0FD",
+                        "#11664D"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0
+                },
+                {
+                    "id": "41",
+                    "colors": [
+                        "#FFC5FF",
+                        "#DE4646"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0
+                },
+                {
+                    "id": "42",
+                    "colors": [
+                        "#B7F9A1",
+                        "#028BB6"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0
+                },
+                {
+                    "id": "43",
+                    "colors": [
+                        "#FFD3F0", 
+                        "#DED846"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0
+                },
+                {
+                    "id": "44",
+                    "colors": [
+                        "#96ADFF",
+                        "#2F5570"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0
+                },
+                {
+                    "id": "45",
+                    "colors": [
+                        "#B6F0FD",
+                        "#11664D"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0
+                },
+                {
+                    "id": "46",
+                    "colors": [
+                        "#FFC5FF",
+                        "#DE4646"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0
+                },
+                {
+                    "id": "47",
+                    "colors": [
+                        "#B7F9A1",
+                        "#028BB6"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0
+                },
+                {
+                    "id": "48",
+                    "colors": [
+                        "#FFD3F0", 
+                        "#DED846"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0
+                },
+                {
+                    "id": "49",
+                    "colors": [
+                        "#96ADFF",
+                        "#2F5570"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0
+                },
+                {
+                    "id": "50",
+                    "colors": [
+                        "#B6F0FD",
+                        "#11664D"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0
+                },
+                {
+                    "id": "51",
+                    "colors": [
+                        "#FFC5FF",
+                        "#DE4646"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0
+                },
+                {
+                    "id": "52",
+                    "colors": [
+                        "#B7F9A1",
+                        "#028BB6"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0
+                },
+                {
+                    "id": "53",
+                    "colors": [
+                        "#FFD3F0", 
+                        "#DED846"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0
+                },
+                {
+                    "id": "54",
+                    "colors": [
+                        "#96ADFF",
+                        "#2F5570"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0
+                },
+                {
+                    "id": "55",
+                    "colors": [
+                        "#B6F0FD",
+                        "#11664D"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0
+                },
+                {
+                    "id": "56",
+                    "colors": [
+                        "#FFC5FF",
+                        "#DE4646"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0
+                },
+                {
+                    "id": "57",
+                    "colors": [
+                        "#B7F9A1",
+                        "#028BB6"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0
+                },
+                {
+                    "id": "58",
+                    "colors": [
+                        "#FFD3F0", 
+                        "#DED846"
+                    ],
+                    "positions": [
+                        0.0,
+                        0.5
+                    ],
+                    "angle": 0.0
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "name": "Patterns",
+            "icon": "https://and.appchief.dev/storage/templates/January2024/h1a9ocqWuBU8loaMjJG7/cover.png",
+            "type": "image",
+            "content": [
+                {
+                    "id": "1",
+                    "image": "https://and.appchief.dev/storage/media/136/c/7OgskdOeBHImXzz1RQx4-2x.png",
+                    "is_premium": true,
+                    "is_new": false
+                },
+                {
+                    "id": "2",
+                    "image": "https://and.appchief.dev/storage/media/134/c/en4WfcUDYnYpeLeaqNH6-2x.png",
+                    "is_premium": true,
+                    "is_new": false
+                },
+                {
+                    "id": "3",
+                    "image": "https://and.appchief.dev/storage/media/131/c/IbE1jY55QrpM6ew6LMdZ-2x.png",
+                    "is_premium": true,
+                    "is_new": false
+                },
+                {
+                    "id": "4",
+                    "image": "https://and.appchief.dev/storage/media/162/c/a3lS8waK30rd0WM8iH7F-2x.png",
+                    "is_premium": true,
+                    "is_new": true
+                },
+                {
+                    "id": "5",
+                    "image": "https://and.appchief.dev/storage/media/24040pxMpKwF5PwLZZiL76LD-2x.jpg",
+                    "is_premium": true,
+                    "is_new": true
+                },
+                {
+                    "id": "6",
+                    "image": "https://and.appchief.dev/storage/media/2405FNUR2KJjsPqxhc8lpff6-2x.jpg",
+                    "is_premium": true,
+                    "is_new": false
+                },
+                {
+                    "id": "7",
+                    "image": "https://and.appchief.dev/storage/media/2406vopqbeRCGiqTMYcGMEvq-2x.jpg"
+                }
+            ]
+        }
+    ]
+}
+
