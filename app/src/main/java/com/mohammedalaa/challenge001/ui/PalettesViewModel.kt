@@ -7,7 +7,6 @@ import com.mohammedalaa.challenge001.model.PaletteResult
 import com.mohammedalaa.challenge001.ui.redux.Store
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -22,7 +21,7 @@ class PalettesViewModel @Inject constructor (
             showLoading = true,
             errorMessage = null
         ),
-        reducer = SearchCitiesReducer(),
+        reducer = PalettesReducer(),
         middlewares = listOf(
             palettesMiddleware
         )

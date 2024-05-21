@@ -3,7 +3,7 @@ package com.mohammedalaa.challenge001.ui
 import com.mohammedalaa.challenge001.ui.redux.Reducer
 
 
-class SearchCitiesReducer : Reducer<PalettesViewState, PalettesAction> {
+class PalettesReducer : Reducer<PalettesViewState, PalettesAction> {
 
 
     override fun reduce(
