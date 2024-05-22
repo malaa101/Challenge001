@@ -1,8 +1,12 @@
 package com.mohammedalaa.challenge001.ui.widget
 
+import androidx.compose.animation.core.FastOutSlowInEasing
+import androidx.compose.animation.core.animateIntOffsetAsState
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -15,17 +19,22 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyHorizontalGrid
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.layout.layout
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.mohammedalaa.challenge001.model.PaletteResult
 import com.mohammedalaa.challenge001.ui.theme.Challenge001Theme
 
+@OptIn(ExperimentalComposeUiApi::class)
 @Composable
 fun PaletteItem(
     itemContent: PaletteResult.Content.ItemContent,
@@ -34,6 +43,22 @@ fun PaletteItem(
     isSelected: Boolean,
     onSelected: () -> Unit
 ) {
+
+
+    val offsetTarget = if (isSelected) {
+        IntOffset(4, 4)
+    } else {
+        IntOffset.Zero
+    }
+    val offset = animateIntOffsetAsState(
+        animationSpec = tween(durationMillis = 100, easing = FastOutSlowInEasing),
+        targetValue = offsetTarget, label = "offset"
+    )
+
+
+
+
+
     when (paletteType) {
         "solid" -> {
             Box(
@@ -55,9 +80,7 @@ fun PaletteItem(
                 if (isSelected) {
                     Box(
                         modifier = Modifier
-                            .padding(4.dp)
-                            .height(44.dp)
-                            .width(44.dp)
+                            .size(48.dp)
                             .background(
                                 color = Color(
                                     android.graphics.Color.parseColor(
@@ -69,11 +92,37 @@ fun PaletteItem(
                             )
                             .border(
                                 4.dp,
+                                Color.Red,
+                                shape = RoundedCornerShape(50)
+                            )
+                            .padding(4.dp)
+                            .background(
+                                color = Color.Transparent,
+                                shape = RoundedCornerShape(50)
+                            )
+                            .border(
+                                4.dp,
                                 Color.White,
                                 shape = RoundedCornerShape(50)
                             )
+                            .layout { measurable, constraints ->
+                                val offsetValue = if (isLookingAhead) offsetTarget else offset.value
+                                val placeable = measurable.measure(constraints)
+                                layout(
+                                    placeable.width + offsetValue.x,
+                                    placeable.height + offsetValue.y
+                                ) {
+                                    placeable.placeRelative(offsetValue)
+                                }
+
+                            }
+                            .clickable(
+                                interactionSource = remember { MutableInteractionSource() },
+                                indication = null
+                            ) {}
 
                     )
+
                 }
 
             }
@@ -111,9 +160,8 @@ fun PaletteItem(
                 if (isSelected) {
                     Box(
                         modifier = Modifier
-                            .padding(4.dp)
-                            .height(44.dp)
-                            .width(44.dp)
+                            .height(48.dp)
+                            .width(48.dp)
                             .background(
                                 brush = Brush.linearGradient(
                                     colors = colors,
@@ -125,11 +173,37 @@ fun PaletteItem(
                             )
                             .border(
                                 4.dp,
+                                Color.Red,
+                                shape = RoundedCornerShape(50)
+                            )
+                            .padding(4.dp)
+                            .background(
+                                color = Color.Transparent,
+                                shape = RoundedCornerShape(50)
+                            )
+                            .border(
+                                4.dp,
                                 Color.White,
                                 shape = RoundedCornerShape(50)
                             )
+                            .layout { measurable, constraints ->
+                                val offsetValue = if (isLookingAhead) offsetTarget else offset.value
+                                val placeable = measurable.measure(constraints)
+                                layout(
+                                    placeable.width + offsetValue.x,
+                                    placeable.height + offsetValue.y
+                                ) {
+                                    placeable.placeRelative(offsetValue)
+                                }
+
+                            }
+                            .clickable(
+                                interactionSource = remember { MutableInteractionSource() },
+                                indication = null
+                            ) {}
 
                     )
+
                 }
             }
         }
@@ -167,7 +241,7 @@ fun PaletteItem(
                             )
                             .border(
                                 4.dp,
-                                Color.White,
+                                Color.Red,
                                 shape = RoundedCornerShape(20)
                             )
 

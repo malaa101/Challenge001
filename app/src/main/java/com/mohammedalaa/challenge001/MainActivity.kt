@@ -62,9 +62,9 @@ import androidx.compose.ui.unit.sp
 import com.mohammedalaa.challenge001.model.PaletteResult
 import com.mohammedalaa.challenge001.ui.PalettesViewModel
 import com.mohammedalaa.challenge001.ui.PalettesViewState
+import com.mohammedalaa.challenge001.ui.getKeyForValue
 import com.mohammedalaa.challenge001.ui.widget.PaletteItem
 import com.mohammedalaa.challenge001.ui.widget.PaletteItemType
-import com.mohammedalaa.challenge001.ui.getKeyForValue
 import com.mohammedalaa.challenge001.ui.theme.Challenge001Theme
 import com.mohammedalaa.challenge001.ui.theme.Typography
 import dagger.hilt.android.AndroidEntryPoint
@@ -172,7 +172,7 @@ private fun BottomSheetContent(
         shape = RoundedCornerShape(16.dp),
         modifier = Modifier
             .fillMaxWidth()
-            .padding(8.dp)
+            .padding(start = 8.dp, end = 8.dp, top = 0.dp, bottom = 24.dp)
             .wrapContentHeight()
             .offset(y = offset)
             .wrapContentHeight()
@@ -210,6 +210,7 @@ private fun BottomSheetContent(
 
             }
             CombinedTwoLazyLists(
+                scope = scope,
                 palettes = viewState.value.pallets,
                 modifier = Modifier,
                 palettesViewModel = palettesViewModel
@@ -224,14 +225,13 @@ private fun BottomSheetContent(
 fun CombinedTwoLazyLists(
     palettes: List<PaletteResult.Content>?,
     modifier: Modifier,
-    palettesViewModel: PalettesViewModel
+    palettesViewModel: PalettesViewModel,
+    scope: CoroutineScope
 ) {
     var selectedPaletteIndex: Int by remember { mutableIntStateOf(0) }
     var selectedColorIndex by remember { mutableStateOf(mutableMapOf(0 to 0)) }
-    val listScrollState = rememberLazyListState()
     val gridScrollState = rememberLazyGridState()
-    var effect1Running by remember { mutableStateOf(false) }
-    var effect2Running by remember { mutableStateOf(false) }
+    val listScrollState = rememberLazyListState()
 
     val map = mutableMapOf<Int, Int>()
     var counter = 0
@@ -246,7 +246,6 @@ fun CombinedTwoLazyLists(
         horizontalAlignment = Alignment.Start, modifier = modifier
             .fillMaxWidth()
             .wrapContentHeight()
-            .padding(16.dp)
     )
     {
         // Compose two LazyColumns with different content
@@ -264,6 +263,15 @@ fun CombinedTwoLazyLists(
                         isSelected = isSelected,
                         onSelected = {
                             selectedPaletteIndex = index
+                            scope.launch {
+                                // plus 4 for the first 5 items in dummy section with zero index
+                                var idx = getKeyForValue(map, selectedPaletteIndex)?.plus(4)
+                                if(index>0){
+                                    idx = idx?.plus(index)
+                                }
+                                listScrollState.animateScrollToItem(index,-150)
+                                idx?.let { it1 -> gridScrollState.animateScrollToItem(it1,-20) }
+                            }
 
                         }
                     )
@@ -271,162 +279,93 @@ fun CombinedTwoLazyLists(
             }
         }
 
+        LazyHorizontalGrid(
+            state = gridScrollState,
+            rows = GridCells.Fixed(2),
+            modifier = Modifier
+                .height(100.dp)
+                .fillMaxWidth(),
+            verticalArrangement = Arrangement.spacedBy(4.dp),
+            horizontalArrangement = Arrangement.spacedBy(8.dp)
+        ) {
 
-        LazyRow {
 
-            item {
-                LazyHorizontalGrid(
-                    state = gridScrollState,
-                    rows = GridCells.Fixed(2),
+            //
+            items(3) { index ->
+                PaletteItem(
+                    paletteType = "solid",
+                    itemContent = palettes[0].itemContent?.get(index)!!,
                     modifier = Modifier
-                        .height(100.dp)
-                        .fillParentMaxWidth(),
-                    verticalArrangement = Arrangement.spacedBy(4.dp),
-                    horizontalArrangement = Arrangement.spacedBy(8.dp)
-                ) {
-
-
-                    //
-                    items(3) { index ->
-                        if (index % 2 == 1) {
-                            GridItem(
-                                type = "solid",
-                                itemContent = palettes[0].itemContent?.get(index)!!,
-                                modifier = Modifier
-                                    .align(Alignment.CenterHorizontally)
-                                    .offset(x = 24.dp),
-                                isSelected = false,
-                                onSelected = {
-
-                                }
-                            )
-                        } else {
-                            GridItem(
-                                type = "solid",
-                                itemContent = palettes[0].itemContent?.get(index)!!,
-                                isSelected = false,
-                                onSelected = {
-
-                                }
-                            )
-                        }
+                        .align(Alignment.CenterHorizontally)
+                        .offset(x = if (index % 2 == 1) 24.dp else 0.dp),
+                    isSelected = false,
+                    onSelected = {
 
                     }
+                )
+            }
 
+            item(span = { GridItemSpan(2) }) {
+                Divider(
+                    color = Black, thickness = 4.dp, modifier = Modifier
+                        .fillMaxHeight()
+                        .width(2.dp)
+                )
+            }
+
+            palettes.forEachIndexed { index1, palette ->
+                palette.itemContent?.let { itemContents ->
+                    items(itemContents.size) { index2 ->
+
+                        val isSelected =
+                            (selectedColorIndex.containsKey(index1) && selectedColorIndex[index1] == index2)
+                        if (isSelected) palettesViewModel.selectedColor(itemContents[index2])
+                        PaletteItem(
+                            paletteType = palette.type,
+                            itemContent = itemContents[index2],
+                            modifier = Modifier.offset(x = if (index2 % 2 == 1) 24.dp else 0.dp),
+                            isSelected = isSelected,
+                            onSelected = {
+                                selectedColorIndex = mutableMapOf(Pair(index1, index2))
+                                palettesViewModel.selectedColor(itemContents[index2])
+                            }
+                        )
+                    }
+
+
+                }
+                if (palettes.last() != palette) {
                     item(span = { GridItemSpan(2) }) {
                         Divider(
                             color = Black, thickness = 4.dp, modifier = Modifier
                                 .fillMaxHeight()
+                                .padding(start = 24.dp)
                                 .width(2.dp)
                         )
                     }
-
-                    palettes.forEachIndexed { index1, palette ->
-                        palette.itemContent?.let { itemContents ->
-                            items(itemContents.size) { index2 ->
-
-                                val isSelected =
-                                    (selectedColorIndex.containsKey(index1) && selectedColorIndex[index1] == index2)
-                                if(isSelected) palettesViewModel.selectedColor(itemContents[index2])
-                                if (index2 % 2 == 1) {
-                                    GridItem(
-                                        type = palette.type,
-                                        itemContent = itemContents[index2],
-                                        modifier = Modifier.offset(x = 24.dp),
-                                        isSelected = isSelected,
-                                        onSelected = {
-                                            selectedColorIndex = mutableMapOf(Pair(index1, index2))
-                                            palettesViewModel.selectedColor(itemContents[index2])
-                                        }
-                                    )
-                                } else {
-                                    GridItem(
-                                        type = palette.type,
-                                        itemContent = itemContents[index2],
-                                        isSelected = isSelected,
-                                        onSelected = {
-                                            selectedColorIndex = mutableMapOf(Pair(index1, index2))
-                                            palettesViewModel.selectedColor(itemContents[index2])
-                                        })
-                                }
-
-                            }
-
-
-                        }
-                        if (palettes.last() != palette) {
-                            item(span = { GridItemSpan(2) }) {
-                                Divider(
-                                    color = Black, thickness = 4.dp, modifier = Modifier
-                                        .fillMaxHeight()
-                                        .padding(start = 24.dp)
-                                        .width(2.dp)
-                                )
-                            }
-                        }
-
-
-                    }
-
-
                 }
+
+
             }
+
         }
 
-        // Sync the scroll positions
-        LaunchedEffect(key1 = gridScrollState.firstVisibleItemIndex) {
-
-            if (!effect2Running) {
-                effect1Running = true
-
-                if (!listScrollState.isScrollInProgress) {
-                    map[gridScrollState.firstVisibleItemIndex]?.let {
-                        listScrollState.animateScrollToItem(
-                            it,
-                            0
-                        )
-                        if (selectedPaletteIndex != it) {
-                            selectedPaletteIndex = it
-                        }
-                    }
-                }
-                effect1Running = false
-            }
-        }
-
-        LaunchedEffect(key1 = selectedPaletteIndex) {
-            if (!effect1Running) {
-                effect2Running = true
-                if (!gridScrollState.isScrollInProgress) {
-
-                    val key = getKeyForValue(map, selectedPaletteIndex)
-                    key?.let {
-                        gridScrollState.animateScrollToItem(
-                            it,
-                            0
-                        )
-                    }
-                }
-                effect2Running = false
-            }
-        }
     }
-}
 
-@Composable
-fun GridItem(
-    type: String?,
-    itemContent: PaletteResult.Content.ItemContent,
-    modifier: Modifier = Modifier,
-    isSelected: Boolean,
-    onSelected: () -> Unit
-) {
+    // Sync the scroll positions
+    LaunchedEffect(key1 = gridScrollState.firstVisibleItemIndex) {
+            if (!listScrollState.isScrollInProgress) {
+                map[gridScrollState.firstVisibleItemIndex]?.let {
+                    listScrollState.animateScrollToItem(
+                        it,
+                        0
+                    )
+                    if (selectedPaletteIndex != it) {
+                        selectedPaletteIndex = it
+                        listScrollState.animateScrollToItem(selectedPaletteIndex,-150)
+                    }
+                }
+            }
 
-    PaletteItem(
-        modifier = modifier,
-        paletteType = type,
-        itemContent = itemContent,
-        isSelected = isSelected,
-        onSelected = onSelected
-    )
+    }
 }
