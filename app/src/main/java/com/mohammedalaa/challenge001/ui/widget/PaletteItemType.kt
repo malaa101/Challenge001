@@ -4,6 +4,7 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.CircleShape
@@ -42,11 +43,12 @@ fun PaletteItemType(content: PaletteResult.Content?, isSelected: Boolean, onSele
     ) {
 
         Row(
+            modifier = Modifier.padding(start = 4.dp, end = 4.dp, top = 0.dp, bottom = 0.dp),
             horizontalArrangement = Arrangement.Start,
             verticalAlignment = Alignment.CenterVertically
         ) {
             AsyncImage(
-                modifier = Modifier.size(36.dp).clip(CircleShape),
+                modifier = Modifier.size(36.dp).padding(4.dp).clip(CircleShape),
                 model = content?.icon,
                 contentScale = ContentScale.FillBounds,
                 contentDescription = null,

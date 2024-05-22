@@ -56,9 +56,6 @@ fun PaletteItem(
     )
 
 
-
-
-
     when (paletteType) {
         "solid" -> {
             Box(

@@ -269,7 +269,6 @@ fun CombinedTwoLazyLists(
                                 if(index>0){
                                     idx = idx?.plus(index)
                                 }
-                                listScrollState.animateScrollToItem(index,-150)
                                 idx?.let { it1 -> gridScrollState.animateScrollToItem(it1,-20) }
                             }
 
@@ -282,7 +281,8 @@ fun CombinedTwoLazyLists(
         LazyHorizontalGrid(
             state = gridScrollState,
             rows = GridCells.Fixed(2),
-            modifier = Modifier
+            modifier = Modifier.
+                    padding(top = 4.dp, bottom = 4.dp)
                 .height(100.dp)
                 .fillMaxWidth(),
             verticalArrangement = Arrangement.spacedBy(4.dp),
@@ -358,11 +358,10 @@ fun CombinedTwoLazyLists(
                 map[gridScrollState.firstVisibleItemIndex]?.let {
                     listScrollState.animateScrollToItem(
                         it,
-                        0
+                        -150
                     )
                     if (selectedPaletteIndex != it) {
                         selectedPaletteIndex = it
-                        listScrollState.animateScrollToItem(selectedPaletteIndex,-150)
                     }
                 }
             }
