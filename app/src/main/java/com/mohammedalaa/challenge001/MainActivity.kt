@@ -48,6 +48,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
+import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
@@ -69,6 +70,7 @@ import com.mohammedalaa.challenge001.ui.theme.Challenge001Theme
 import com.mohammedalaa.challenge001.ui.theme.Typography
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
@@ -262,16 +264,16 @@ fun CombinedTwoLazyLists(
                         content = palettes.getOrNull(index),
                         isSelected = isSelected,
                         onSelected = {
-                            selectedPaletteIndex = index
+                            selectedPaletteIndex=index
                             scope.launch {
-                                // plus 4 for the first 5 items in dummy section with zero index
-                                var idx = getKeyForValue(map, selectedPaletteIndex)?.plus(4)
-                                if(index>0){
-                                    idx = idx?.plus(index)
+                                if (!gridScrollState.isScrollInProgress) {
+                                    var idx = getKeyForValue(map, selectedPaletteIndex)?.plus(4)
+                                    if (index > 0) {
+                                        idx = idx?.plus(index)
+                                    }
+                                    idx?.let { it1 -> gridScrollState.animateScrollToItem(it1, -20) }
                                 }
-                                idx?.let { it1 -> gridScrollState.animateScrollToItem(it1,-20) }
                             }
-
                         }
                     )
                 }
@@ -281,8 +283,7 @@ fun CombinedTwoLazyLists(
         LazyHorizontalGrid(
             state = gridScrollState,
             rows = GridCells.Fixed(2),
-            modifier = Modifier.
-                    padding(top = 4.dp, bottom = 4.dp)
+            modifier = Modifier.padding(top = 4.dp, bottom = 4.dp)
                 .height(100.dp)
                 .fillMaxWidth(),
             verticalArrangement = Arrangement.spacedBy(4.dp),
@@ -352,19 +353,19 @@ fun CombinedTwoLazyLists(
 
     }
 
-    // Sync the scroll positions
-    LaunchedEffect(key1 = gridScrollState.firstVisibleItemIndex) {
-            if (!listScrollState.isScrollInProgress) {
-                map[gridScrollState.firstVisibleItemIndex]?.let {
-                    listScrollState.animateScrollToItem(
-                        it,
-                        -150
-                    )
-                    if (selectedPaletteIndex != it) {
-                        selectedPaletteIndex = it
+    LaunchedEffect(gridScrollState) {
+        snapshotFlow { gridScrollState.firstVisibleItemIndex }
+            .distinctUntilChanged()
+            .collect { index ->
+                if (!listScrollState.isScrollInProgress) {
+                    map[index]?.let {
+                        listScrollState.animateScrollToItem(
+                            it,
+                            -150
+                        )
                     }
                 }
             }
-
     }
+
 }
